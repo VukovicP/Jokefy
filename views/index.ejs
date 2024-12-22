@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokefy</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <section id="form">
+        <div id="intro">
+            <h1>Welcome to Jokefy</h1>
+            <p>This is a website that will generate jokes based on your criteria!</p>
+        </div>
+
+        <div class="inner">
+            <form action="/submit" method="POST" id="fomr">
+                <table>
+                    <tr>
+                        <td>
+                            <p>Select category: </p>
+                        </td>
+                        <td>
+                            <div class="multiselect noslelect" id="categoryWraper">
+    
+                                <span id="categoryMulty">
+                                    <input type="checkbox" id="cat-cb1" name="categories" value="Programming">
+                                    <label for="cat-cb1">Programming</label>
+                                    <input type="checkbox" id="cat-cb2" name="categories" value="Dark">
+                                    <label for="cat-cb1">Dark</label>
+                                    <input type="checkbox" id="cat-cb3" name="categories" value="Spooky">
+                                    <label for="cat-cb1">Spooky</label>
+                                    <input type="checkbox" id="cat-cb4" name="categories" value="Christmas">
+                                    <label for="cat-cb1">Christmas</label>
+                                </span>
+    
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Select language: </p>
+                        </td>
+                        <td>
+                            <div class="multiselect noslelect">
+                                <select name="language" id="language-select">
+                                    <option value="en">English - en</option>
+                                    <option value="fr">French - fr</option>
+                                    <option value="de">German - de</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>What jokes not to include: </p>
+                        </td>
+                        <td>
+                            <div class="multiselect noslelect">
+                                <span id="typeMulty">
+                                    <input type="checkbox" id="ty-cb1" name="blacklist" value="religious">
+                                    <label for="ty-cb1">Religious</label>
+                                    <input type="checkbox" id="ty-cb2" name="blacklist" value="political">
+                                    <label for="ty-cb2">Political</label>
+                                    <input type="checkbox" id="ty-cb3" name="blacklist" value="racist">
+                                    <label for="ty-cb3">Racist</label>
+                                    <input type="checkbox" id="ty-cb4" name="blacklist" value="sexist">
+                                    <label for="ty-cb4">Sexist</label>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <div>
+                                <input id="submit" type="submit" value="POST" formaction="/post-joke">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="response-area">
+                                <p><%=content%></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            
+        </div>
+    </section>
+</body>
+</html>
